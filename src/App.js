@@ -16,10 +16,10 @@ function App() {
     });
   };
   return (
-    <div>
+    <>
       <UserForm onAddUser={addUserHandler} />
       <UserList users={usersList} />
-    </div>
+    </>
   );
 }
 

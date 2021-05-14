@@ -34,6 +34,8 @@ const UserForm = (props) => {
       setErrorMessage(null);
       const uName = event.target[0].value;
       const uAge = event.target[1].value;
+      event.target[0].value = "";
+      event.target[1].value = "";
       props.onAddUser(uName, uAge);
       // console.log("check in userform");
     }
@@ -43,7 +45,7 @@ const UserForm = (props) => {
     setErrorMessage(null);
   };
   return (
-    <div>
+    <>
       {errorMessage && (
         <ErrorModal message={errorMessage} onConfirm={errorHandler} />
       )}
@@ -64,7 +66,7 @@ const UserForm = (props) => {
           </form>
         </Container>
       </Card>
-    </div>
+    </>
   );
 };
 export default UserForm;
